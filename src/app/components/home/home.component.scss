@@ -1,0 +1,145 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+@import "../../../scss/variables";
+
+.ideas-section {
+  padding: 2rem 0;
+
+  .search-form {
+    display: flex;
+    justify-content: space-between;
+    .search-field {
+      border: none;
+      &::placeholder {
+        color: $placeholder-text;
+      }
+    }
+  }
+
+  .input-group-text {
+    border: none;
+    background-color: white;
+    color: $placeholder-text;
+  }
+
+  .ideas-list {
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    column-gap: 32px;
+    row-gap: 32px;
+
+    .idea {
+      cursor: pointer;
+      .thumbnail {
+        width: 250px;
+        height: 180px;
+        border: 1px solid $border-color;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+
+        img {
+          border-radius: 6px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+      .idea {
+        .thumbnail {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+.loading {
+  text-align: center;
+  font-size: 32px;
+  margin: 2rem;
+  color: lightgrey;
+}
+/* Banner Call CSS Start */
+.header-container {
+  
+  height: 264px;
+  display:flex;
+  align-items: center;
+  background-color: #e7f5fd;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+ 
+}
+header{
+  
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+}
+header h1{
+  
+  font-family: Lato;
+  font-size: 28px;
+  font-weight: 900;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  color: var(--dark-blue-grey);
+  margin-bottom: 24px;
+  margin: 24px 96px 37px;
+}
+header p{
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  color: var(--dark-blue-grey);
+  width: 448px;
+  margin-bottom: 48px;
+  margin: 24px 96px 37px;
+}
+header a{
+ text-decoration: none;
+  color: #fff;
+  background-color:#1a2c4f;
+  border-radius: 8px;
+  padding: 12px 48px 11px;
+  font-size: 18px;
+  display: inline-block;
+  transition: 300ms;
+  margin: 24px 96px 37px;
+  
+  
+}
+header a:hover{
+  transform: translateY(-8px);
+}
+header .hero-image{
+  position: relative;
+  
+}
+header .hero-image img{
+  transition: 300ms;
+  position: relative;
+  z-index: 100;
+  background-color: #e7f5fd;
+}
+
+.wrapper{
+  width:1200px;
+  margin:0 auto;
+}
+/* Banner Call CSS End */

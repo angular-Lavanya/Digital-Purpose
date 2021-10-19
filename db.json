@@ -1,0 +1,20 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "Lavanya",
+      "lastName": "Shyam",
+      "gender": "Female"
+    },
+    {
+      "id": 2,
+      "firstName": "Vihaan",
+      "lastName": "Sundar",
+      "gender": "Male"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

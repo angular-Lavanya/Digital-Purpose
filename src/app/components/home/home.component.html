@@ -1,0 +1,86 @@
+<div class="container">
+
+  <div class="ideas-section">
+    <!-- Banner Call Start-->
+
+   <div class="header-container">
+     <div class="wrapper">
+       <header>
+         <div class="hero-content">
+           <h1>Ideas for a better world</h1>
+           <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+           </p>
+           <a href="#">
+            Share your idea
+           </a>
+           </div>
+         <div class="hero-image">
+          <img src="/assets/images/group-2-copy-2.jpg" alt=""/>
+        
+          </div>
+        </header>
+     </div>
+   </div>
+   
+  
+
+<!-- Banner Call End-->
+
+    <h3>Explore Ideas</h3>
+
+    <form [formGroup]="searchForm" class="search-form">
+
+      <div>
+        <div class="input-group mr-2">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><fa-icon [icon]="searchIcon"></fa-icon></span>
+          </div>
+          <input formControlName="searchTerm" class="search-field form-control mr-2" placeholder="Search ideas...">
+        </div>
+      </div>
+
+      <div>
+        <select formControlName="goal" class="form-control">
+          <option value="">All sustainable development goals</option>
+          <option *ngFor="let goal of goals" [value]="goal.key">{{goal.label}}</option>
+        </select>
+      </div>
+
+      <button (click)="goToPage('Form')" class="btn btn-outline-success" type="submit">View Form</button>
+
+    </form>
+
+   
+
+    <div class="ideas-list">
+      <ng-container *ngIf="!loading; else isLoading">
+        <ng-container *ngIf="!loadingError; else isLoadingError">
+          <div *ngIf="!ideas?.length" class="text-muted">(no ideas found)</div>
+
+          <div class="idea" *ngFor="let idea of ideas" [routerLink]="['/idea', idea.id]">
+            <div class="thumbnail">
+              <img [src]="idea.thumbnailUrl">
+            </div>
+            <div>
+              <h4>{{idea.title}}</h4>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #isLoading>
+  <div class="loading">
+    <fa-icon [icon]="spinnerIcon" [spin]="true"></fa-icon>
+  </div>
+</ng-template>
+
+<ng-template #isLoadingError>
+  <div class="text-danger">
+    Sorry, something went wrong loading these results
+  </div>
+</ng-template>
